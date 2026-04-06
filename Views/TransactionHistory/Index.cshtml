@@ -1,0 +1,70 @@
+@model IEnumerable<FinanceTracker.Models.Transaction>
+@{
+    ViewData["Title"] = "Historia Transakcji";
+}
+
+<div style="max-width: 860px; margin: 0 auto;">
+
+    <div class="text-center mb-3">
+        <h1 style="font-size:3.2rem;">Historia Transakcji</h1>
+        <p style="font-family:'Comic Sans MS',cursive; font-size:1.35rem; color:#555;">
+            Pelna lista wszystkich Twoich transakcji.
+        </p>
+    </div>
+
+    <hr class="squiggle-divider" />
+
+    <div class="d-flex justify-content-center mb-4">
+        <a class="btn btn-outline-secondary" asp-controller="Dashboard" asp-action="Index" role="button">
+            Powrot do Dashboardu
+        </a>
+    </div>
+
+    <div class="doodle-card">
+        <h2 class="doodle-title mb-3">Wszystkie transakcje</h2>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Opis</th>
+                        <th>Typ</th>
+                        <th>Kwota</th>
+                        <th>Akcje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var transaction in Model)
+                    {
+                        <tr>
+                            <td>@transaction.Date.ToString("dd-MM-yyyy")</td>
+                            <td>@transaction.Note</td>
+                            <td>
+                                @if (transaction.IsIncome)
+                                {
+                                    <span class="badge-income">Dochod</span>
+                                }
+                                else
+                                {
+                                    <span class="badge-expense">Wydatek</span>
+                                }
+                            </td>
+                            <td class="@(transaction.IsIncome ? "text-income" : "text-expense")">
+                                @transaction.GetAmount().ToString("C")
+                            </td>
+                            <td>
+                                <a class="btn btn-primary btn-sm"
+                                   asp-controller="EditTransaction" asp-action="Index"
+                                   asp-route-id="@transaction.TransactionId">Edytuj</a>
+                                <a class="btn btn-danger btn-sm"
+                                   asp-controller="DeleteTransaction" asp-action="Index"
+                                   asp-route-id="@transaction.TransactionId">Usun</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,30 @@
+@model FinanceTracker.Models.Transaction
+@{
+    ViewData["Title"] = "Edytuj Transakcję";
+}
+<div style="margin-top: 10px; font-size: 48px; font-weight: bold; text-align: center;font-family: Comic Sans MS">
+    <h1>Edytuj Transakcję</h1>
+    <p>Zaktualizuj swoje dane.</p>
+</div>
+<div style="display: flex; justify-content: center; align-items: center; font-size: 24px; flex-direction: column;">
+    <br />
+    <form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="TransactionId" />
+    <br>
+    <label for="Note">Nazwa Transakcji</label>
+        <input style="color: black;" type="text" asp-for="Note" />
+    <br>
+    <label for="Amount">Kwota</label>
+        <input style="color: black;" type="number" asp-for="Amount" />
+    <br>
+    <label for="IsIncome">Czy to dochód?</label>
+        <input style="color: black;" type="checkbox" asp-for="IsIncome" />
+    <br>
+    <label for="Date">Data</label>
+        <input style="color: black;" type="date" asp-for="Date" />
+    <br>
+        <button style="color: black;" type="submit">Zapisz Pomyślnie</button>
+    </form>
+    <br>
+    <a class="btn btn-primary" asp-controller="Dashboard" asp-action="Index" role="button">Powrót</a>
+</div>

@@ -1,0 +1,94 @@
+@model FinanceTracker.Models.DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<style>
+    body {
+        background-image: url('/Images/Dashboard_Background.jpg');
+        background-size: cover;
+        background-position: center 30px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
+<div style="max-width: 860px; margin: 0 auto;">
+
+    <div class="text-center mb-3">
+        <h1 style="font-size:3.2rem;">Przeglad Finansow</h1>
+        <p style="font-family:'Comic Sans MS',cursive; font-size:1.35rem; color:#555;">
+            Twoje najnowsze transakcje, saldo oraz statystyki.
+        </p>
+    </div>
+
+    <hr class="squiggle-divider" />
+
+    <div class="text-center my-4">
+        <div class="saldo-box">
+            Saldo: @Model.Saldo.ToString("C")
+        </div>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+        <a class="btn btn-primary" asp-controller="Transaction" asp-action="Index" role="button">
+            Dodaj transakcje
+        </a>
+        <a class="btn btn-secondary" asp-controller="TransactionHistory" asp-action="Index" role="button">
+            Historia Transakcji
+        </a>
+        <a class="btn btn-outline-secondary" asp-controller="Rules" asp-action="Index" role="button">
+            Polityka Prywatnosci
+        </a>
+    </div>
+
+    <hr class="squiggle-divider" />
+
+    <div class="doodle-card">
+        <h2 class="doodle-title mb-3">Ostatnie transakcje</h2>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Opis</th>
+                        <th>Typ</th>
+                        <th>Kwota</th>
+                        <th>Akcje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var transaction in Model.Transactions)
+                    {
+                        <tr>
+                            <td>@transaction.Date.ToString("dd-MM-yyyy")</td>
+                            <td>@transaction.Note</td>
+                            <td>
+                                @if (transaction.IsIncome)
+                                {
+                                    <span class="badge-income">Dochod</span>
+                                }
+                                else
+                                {
+                                    <span class="badge-expense">Wydatek</span>
+                                }
+                            </td>
+                            <td class="@(transaction.IsIncome ? "text-income" : "text-expense")">
+                                @transaction.GetAmount().ToString("C")
+                            </td>
+                            <td>
+                                <a class="btn btn-primary btn-sm"
+                                   asp-controller="EditTransaction" asp-action="Index"
+                                   asp-route-id="@transaction.TransactionId">Edytuj</a>
+                                <a class="btn btn-danger btn-sm"
+                                   asp-controller="DeleteTransaction" asp-action="Index"
+                                   asp-route-id="@transaction.TransactionId">Usun</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
