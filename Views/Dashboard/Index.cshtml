@@ -61,9 +61,9 @@
                     @foreach (var transaction in Model.Transactions)
                     {
                         <tr>
-                            <td>@transaction.Date.ToString("dd-MM-yyyy")</td>
-                            <td>@transaction.Note</td>
-                            <td>
+                            <td data-label="Data">@transaction.Date.ToString("dd-MM-yyyy")</td>
+                            <td data-label="Opis">@transaction.Note</td>
+                            <td data-label="Typ">
                                 @if (transaction.IsIncome)
                                 {
                                     <span class="badge-income">Dochod</span>
@@ -73,10 +73,10 @@
                                     <span class="badge-expense">Wydatek</span>
                                 }
                             </td>
-                            <td class="@(transaction.IsIncome ? "text-income" : "text-expense")">
+                            <td data-label="Kwota" class="@(transaction.IsIncome ? "text-income" : "text-expense")">
                                 @transaction.GetAmount().ToString("C")
                             </td>
-                            <td>
+                            <td data-label="Akcje">
                                 <a class="btn btn-primary btn-sm"
                                    asp-controller="EditTransaction" asp-action="Index"
                                    asp-route-id="@transaction.TransactionId">Edytuj</a>

@@ -309,3 +309,84 @@ footer a {
 .form-floating > .form-control:focus::placeholder {
     text-align: start;
 }
+
+/* --- RESPONSIVE DESIGN (MOBILE) --- */
+
+@media (max-width: 768px) {
+    body {
+        margin-bottom: 60px;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.7rem; }
+    h3 { font-size: 1.4rem; }
+
+    .navbar-brand {
+        font-size: 1.5rem !important;
+    }
+
+    .doodle-card {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+
+    .saldo-box {
+        font-size: 1.6rem;
+        padding: 12px 20px;
+        width: 100%;
+        display: block;
+    }
+
+    /* Table to Card Transformation */
+    .table thead {
+        display: none !important; /* Hide headers on mobile */
+    }
+
+    .table, .table tbody, .table tr, .table td {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .table tr {
+        margin-bottom: 20px !important;
+        border: 2.5px solid #000 !important;
+        border-radius: 12px !important;
+        padding: 10px !important;
+        background: #fff !important;
+        box-shadow: 4px 4px 0 #000 !important;
+    }
+
+    .table td {
+        text-align: right !important;
+        padding: 10px 10px !important;
+        border: none !important;
+        position: relative;
+        min-height: 45px;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        text-align: left;
+        display: inline-block;
+        padding-right: 15px;
+    }
+
+    .table td:last-child {
+        border-top: 2px dashed #000 !important;
+        margin-top: 8px;
+        padding-top: 15px !important;
+        justify-content: center !important;
+    }
+
+    .badge-income, .badge-expense {
+        font-size: 0.9rem;
+    }
+
+    .squiggle-divider {
+        margin: 16px 0;
+    }
+}
