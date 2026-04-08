@@ -4,101 +4,6 @@
     ViewData["Title"] = "Dodaj Transakcję";
 }
 
-<style>
-    .form-card {
-        max-width: 480px;
-        margin: 60px auto;
-        background-color: rgba(255, 255, 255, 0.95);
-        border-radius: 20px;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-        padding: 40px 48px;
-        font-family: 'Comic Sans MS', cursive;
-    }
-
-    .form-card h1 {
-        font-size: 2rem;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 6px;
-    }
-
-    .form-card .subtitle {
-        text-align: center;
-        color: #666;
-        font-size: 1rem;
-        margin-bottom: 28px;
-    }
-
-    .form-card .form-group {
-        margin-bottom: 18px;
-    }
-
-    .form-card label {
-        display: block;
-        font-size: 0.9rem;
-        font-weight: bold;
-        color: #444;
-        margin-bottom: 5px;
-    }
-
-    .form-card input[type="text"],
-    .form-card input[type="number"],
-    .form-card input[type="date"] {
-        width: 100%;
-        padding: 10px 14px;
-        border: 2px solid #ddd;
-        border-radius: 10px;
-        font-size: 1rem;
-        font-family: 'Comic Sans MS', cursive;
-        transition: border-color 0.2s;
-        box-sizing: border-box;
-    }
-
-    .form-card input:focus {
-        outline: none;
-        border-color: #0d6efd;
-    }
-
-    .checkbox-group {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 18px;
-    }
-
-    .checkbox-group input[type="checkbox"] {
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
-    }
-
-    .checkbox-group label {
-        margin-bottom: 0;
-        font-size: 1rem;
-        cursor: pointer;
-    }
-
-    .btn-submit {
-        width: 100%;
-        padding: 12px;
-        background-color: #0d6efd;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        font-size: 1.1rem;
-        font-family: 'Comic Sans MS', cursive;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.2s, transform 0.1s;
-        margin-top: 8px;
-    }
-
-    .btn-submit:hover {
-        background-color: #0b5ed7;
-        transform: translateY(-1px);
-    }
-</style>
-
 <div class="form-card">
     <h1>Dodaj Transakcję</h1>
     <p class="subtitle">Zarządzaj swoimi wydatkami i dochodami.</p>
@@ -119,7 +24,7 @@
             <input type="date" asp-for="Date" />
         </div>
 
-        <div class="checkbox-group">
+        <div class="checkbox-group mt-3 mb-4">
             <input type="checkbox" asp-for="IsIncome" id="IsIncome" />
             <label for="IsIncome">To jest dochód (zaznacz jeśli tak)</label>
         </div>

@@ -2,29 +2,38 @@
 @{
     ViewData["Title"] = "Edytuj Transakcję";
 }
-<div style="margin-top: 10px; font-size: 48px; font-weight: bold; text-align: center;font-family: Comic Sans MS">
+
+<div class="form-card">
     <h1>Edytuj Transakcję</h1>
-    <p>Zaktualizuj swoje dane.</p>
-</div>
-<div style="display: flex; justify-content: center; align-items: center; font-size: 24px; flex-direction: column;">
-    <br />
+    <p class="subtitle">Zaktualizuj swoje dane.</p>
+
     <form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="TransactionId" />
-    <br>
-    <label for="Note">Nazwa Transakcji</label>
-        <input style="color: black;" type="text" asp-for="Note" />
-    <br>
-    <label for="Amount">Kwota</label>
-        <input style="color: black;" type="number" asp-for="Amount" />
-    <br>
-    <label for="IsIncome">Czy to dochód?</label>
-        <input style="color: black;" type="checkbox" asp-for="IsIncome" />
-    <br>
-    <label for="Date">Data</label>
-        <input style="color: black;" type="date" asp-for="Date" />
-    <br>
-        <button style="color: black;" type="submit">Zapisz Pomyślnie</button>
+        <input type="hidden" asp-for="TransactionId" />
+        
+        <div class="form-group">
+            <label for="Note">Nazwa Transakcji</label>
+            <input type="text" asp-for="Note" />
+        </div>
+
+        <div class="form-group">
+            <label for="Amount">Kwota (zł)</label>
+            <input type="number" asp-for="Amount" step="0.01" />
+        </div>
+
+        <div class="form-group">
+            <label for="Date">Data</label>
+            <input type="date" asp-for="Date" />
+        </div>
+
+        <div class="checkbox-group mt-3 mb-4">
+            <input type="checkbox" asp-for="IsIncome" id="IsIncome" />
+            <label for="IsIncome">Czy to dochód?</label>
+        </div>
+
+        <button type="submit" class="btn-submit">Zapisz Zmiany</button>
     </form>
-    <br>
-    <a class="btn btn-primary" asp-controller="Dashboard" asp-action="Index" role="button">Powrót</a>
+
+    <div style="text-align:center; margin-top: 16px;">
+        <a class="btn btn-outline-secondary btn-sm" asp-controller="Dashboard" asp-action="Index">← Powrót do Dashboardu</a>
+    </div>
 </div>

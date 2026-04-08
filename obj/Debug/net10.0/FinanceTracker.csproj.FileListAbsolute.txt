@@ -222,4 +222,4 @@ C:\Users\z4ck2\Desktop\FinanseTracker\obj\Debug\net10.0\FinanceTracker.pdb
 C:\Users\z4ck2\Desktop\FinanseTracker\obj\Debug\net10.0\FinanceTracker.genruntimeconfig.cache
 C:\Users\z4ck2\Desktop\FinanseTracker\obj\Debug\net10.0\ref\FinanceTracker.dll
 C:\Users\z4ck2\Desktop\FinanseTracker\obj\Debug\net10.0\FinanceTracker.sourcelink.json
-C:\Users\z4ck2\Desktop\FinanseTracker\obj\Debug\net10.0\compressed\a1lmkvg0l5-{0}-c88xe3bbwu-c88xe3bbwu.gz
+C:\Users\z4ck2\Desktop\FinanseTracker\obj\Debug\net10.0\compressed\a1lmkvg0l5-{0}-au9ycc54g8-au9ycc54g8.gz

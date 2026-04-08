@@ -1,4 +1,8 @@
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 html {
     font-size: 16px;
@@ -63,17 +67,31 @@ body {
     box-shadow: 8px 8px 0px #000000;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Comic Sans MS', cursive;
     font-weight: 700;
     color: #000000;
 }
 
-h1 { font-size: 2.8rem; }
-h2 { font-size: 2.2rem; }
-h3 { font-size: 1.8rem; }
+h1 {
+    font-size: 2.8rem;
+}
 
-.btn, button[type="submit"] {
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+.btn,
+button[type="submit"] {
     font-family: 'Comic Sans MS', cursive !important;
     font-size: 1.1rem !important;
     font-weight: 700 !important;
@@ -85,25 +103,44 @@ h3 { font-size: 1.8rem; }
     color: #000000 !important;
 }
 
-.btn:hover, button[type="submit"]:hover {
+.btn:hover,
+button[type="submit"]:hover {
     transform: translate(-2px, -2px) !important;
     box-shadow: 5px 5px 0px #000000 !important;
     background-color: #e8e8e8 !important;
     color: #000000 !important;
 }
 
-.btn:active, button[type="submit"]:active {
+.btn:active,
+button[type="submit"]:active {
     transform: translate(1px, 1px) !important;
     box-shadow: 1px 1px 0px #000000 !important;
 }
 
-.btn-primary   { background-color: #ffffff !important; color: #000 !important; }
-.btn-secondary { background-color: #e8e8e8 !important; color: #000 !important; }
-.btn-danger    { background-color: #d0d0d0 !important; color: #000 !important; }
-.btn-outline-secondary { background-color: transparent !important; color: #000 !important; }
+.btn-primary {
+    background-color: #ffffff !important;
+    color: #000 !important;
+}
 
-.btn-primary:hover, .btn-secondary:hover,
-.btn-danger:hover, .btn-outline-secondary:hover {
+.btn-secondary {
+    background-color: #e8e8e8 !important;
+    color: #000 !important;
+}
+
+.btn-danger {
+    background-color: #d0d0d0 !important;
+    color: #000 !important;
+}
+
+.btn-outline-secondary {
+    background-color: transparent !important;
+    color: #000 !important;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-danger:hover,
+.btn-outline-secondary:hover {
     background-color: #c8c8c8 !important;
     color: #000 !important;
 }
@@ -130,6 +167,7 @@ h3 { font-size: 1.8rem; }
     border-left: 2.5px solid #000000;
     border-radius: 10px 0 0 0;
 }
+
 .table thead th:last-child {
     border-right: 2.5px solid #000000;
     border-radius: 0 10px 0 0;
@@ -163,6 +201,7 @@ h3 { font-size: 1.8rem; }
     border-left: 2.5px solid #000000 !important;
     border-radius: 8px 0 0 8px;
 }
+
 .table tbody td:last-child {
     border-right: 2.5px solid #000000 !important;
     border-radius: 0 8px 8px 0;
@@ -266,6 +305,7 @@ label {
     display: inline-block;
     margin-bottom: 6px;
 }
+
 .doodle-title::after {
     content: '';
     display: block;
@@ -276,8 +316,19 @@ label {
     width: 100%;
 }
 
-.text-income  { color: #000000; font-weight: 700; font-family: 'Comic Sans MS', cursive; font-size: 1.1rem; }
-.text-expense { color: #555555; font-weight: 700; font-family: 'Comic Sans MS', cursive; font-size: 1.1rem; }
+.text-income {
+    color: #000000;
+    font-weight: 700;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.1rem;
+}
+
+.text-expense {
+    color: #555555;
+    font-weight: 700;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.1rem;
+}
 
 footer {
     font-family: 'Comic Sans MS', cursive;
@@ -294,20 +345,115 @@ footer a {
     text-decoration: underline;
 }
 
-.btn:focus, .btn:active:focus,
-.form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 3px rgba(0,0,0,0.3) !important;
+.btn:focus,
+.btn:active:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3) !important;
 }
 
-.form-floating > .form-control-plaintext::placeholder,
-.form-floating > .form-control::placeholder {
+.form-floating>.form-control-plaintext::placeholder,
+.form-floating>.form-control::placeholder {
     color: #888888;
     text-align: end;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder,
-.form-floating > .form-control:focus::placeholder {
+.form-floating>.form-control-plaintext:focus::placeholder,
+.form-floating>.form-control:focus::placeholder {
     text-align: start;
+}
+
+.form-card {
+    max-width: 480px;
+    margin: 60px auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 40px 48px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.form-card h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.form-card .subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 28px;
+}
+
+.form-card .form-group {
+    margin-bottom: 18px;
+}
+
+.form-card label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.form-card input[type="text"],
+.form-card input[type="number"],
+.form-card input[type="date"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Comic Sans MS', cursive;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.form-card input:focus {
+    outline: none;
+    border-color: #0d6efd;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 8px;
+}
+
+.btn-submit:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-1px);
 }
 
 /* --- RESPONSIVE DESIGN (MOBILE) --- */
@@ -317,9 +463,27 @@ footer a {
         margin-bottom: 60px;
     }
 
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.7rem; }
-    h3 { font-size: 1.4rem; }
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    .form-card {
+        margin: 30px 15px;
+        padding: 25px 20px;
+        border-radius: 16px;
+    }
+
+    .form-card h1 {
+        font-size: 1.6rem;
+    }
 
     .navbar-brand {
         font-size: 1.5rem !important;
@@ -339,10 +503,14 @@ footer a {
 
     /* Table to Card Transformation */
     .table thead {
-        display: none !important; /* Hide headers on mobile */
+        display: none !important;
+        /* Hide headers on mobile */
     }
 
-    .table, .table tbody, .table tr, .table td {
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
         display: block !important;
         width: 100% !important;
     }
@@ -382,11 +550,54 @@ footer a {
         justify-content: center !important;
     }
 
-    .badge-income, .badge-expense {
+    .badge-income,
+    .badge-expense {
         font-size: 0.9rem;
     }
 
     .squiggle-divider {
         margin: 16px 0;
+    }
+
+    /* Bottom Nav Styles */
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        border-top: 3px solid #000;
+        z-index: 1000;
+        padding: 5px 0 10px 0;
+        box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .bottom-nav .nav-link {
+        font-size: 0.9rem !important;
+        padding: 4px 8px !important;
+        text-align: center;
+        color: #000 !important;
+        border: 2px solid transparent;
+    }
+
+    .bottom-nav .nav-link:hover,
+    .bottom-nav .nav-link:active {
+        background: #f0f0f0;
+        border: 2px solid #000;
+        border-radius: 8px;
+        transform: rotate(-1deg);
+    }
+
+    .bottom-nav .nav-link.highlighted {
+        background: #000 !important;
+        color: #fff !important;
+        border-radius: 12px;
+        transform: scale(1.1);
+        font-weight: 800;
+    }
+
+    /* Padding for main content to avoid overlap with fixed bottom nav */
+    main {
+        padding-bottom: 80px !important;
     }
 }

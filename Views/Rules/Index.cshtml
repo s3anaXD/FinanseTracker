@@ -1,10 +1,8 @@
-
 @{
     ViewData["Title"] = "Polityka Prywatności";
 }
 <style>
     body {
-        
         background-image: url('/Images/Rules_Background.jpg');
         background-size: cover;
         background-position: center 30px;
@@ -12,12 +10,16 @@
         background-attachment: fixed;
     }
 </style>
-<div style="margin-top: 10px; font-size: 48px; font-weight: bold; text-align: center;font-family: Comic Sans MS">
-    <h1>Polityka Prywatności</h1>
 
-</div>
-<div style="margin-top: 10px; font-size: 24px; font-weight: bold; text-align: center;font-family: Comic Sans MS">
-    <p>Polityka Prywatności:</p>
-    <br>
-    <p>FinanseTracker jest aplikacją stworzoną w celach edukacyjnych i nie przechowuje żadnych danych osobowych użytkowników. :></p>
-</div>
+<div class="doodle-card text-center" style="max-width: 700px; margin: 40px auto; background-color: rgba(255, 255, 255, 0.95);">
+    <h1 class="doodle-title mb-4">Polityka Prywatności</h1>
+    
+    <div style="font-size: 1.25rem;">
+        <p class="font-weight-bold mb-3">Polityka Prywatności:</p>
+        <p>FinanseTracker jest aplikacją stworzoną w celach edukacyjnych i nie przechowuje żadnych danych osobowych użytkowników. :></p>
+    </div>
+    
+    <div class="mt-4">
+        <a class="btn btn-outline-secondary btn-sm" asp-controller="Dashboard" asp-action="Index">← Powrót do Dashboardu</a>
+    </div>
+</div>
